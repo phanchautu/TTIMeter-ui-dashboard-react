@@ -1,0 +1,13 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ${FE_IOT_DOCKER_FILE}
+    image: ${FE_IOT_IMAGE}
+    container_name: iot_container
+    ports:
+      - "8088:3000"
+    volumes:
+      - ${FE_IOT_MOUNT}:/app
+    restart: always
